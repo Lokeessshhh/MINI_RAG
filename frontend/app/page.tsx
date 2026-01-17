@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
@@ -33,6 +33,10 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<"upload" | "query">("upload");
   const [expandedSource, setExpandedSource] = useState<number | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    fetch(`${API_URL}/health`).catch(() => {}); // Wake up backend
+  }, []);
 
   const handleTextUpload = async () => {
     if (!text.trim()) {
