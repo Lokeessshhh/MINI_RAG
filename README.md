@@ -2,6 +2,11 @@
 
 A Retrieval-Augmented Generation (RAG) application that allows users to upload documents and ask questions with AI-powered answers including citations.
 
+## Live 
+
+- **Frontend**: [https://mini-rag-liard.vercel.app/](https://mini-rag-liard.vercel.app/)
+- **Backend API**: [https://mini-rag-492s.onrender.com](https://mini-rag-492s.onrender.com)
+
 ## Architecture
 
 ```
